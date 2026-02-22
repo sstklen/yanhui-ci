@@ -1,5 +1,5 @@
-name: 'YanHui Debug AI'
-description: 'CI fails? YanHui remembers every bug ever solved. Get instant fixes from a shared AI knowledge base.'
+name: '顏回 YanHui Debug AI'
+description: 'CI fails? YanHui (顏回) checks 200+ known bugs in 4ms. Not found? AI analyzes it. Fix saved to shared KB for everyone.'
 author: 'washinmura'
 
 branding:
