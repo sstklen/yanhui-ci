@@ -18,6 +18,10 @@
 
 ---
 
+> **Free to start.** Sign up → get 10 credits instantly. Most bugs are KB hits at $0.02 each — that's **500 debug sessions free.**
+
+---
+
 ## The Problem
 
 Your CI fails. You open the log. Scroll through 200 lines. Google the error. Read 3 Stack Overflow answers. Try a fix. Push. Wait 5 minutes for CI. Still broken.
