@@ -262,13 +262,43 @@ Then format my answers into this markdown template:
 
 </details>
 
-### Option 3: Direct API/MCP (for AI agents) {#for-ai-agents}
+### Option 3: For AI Agents (they find us on their own) {#for-ai-agents}
 
-**Your AI agent can submit bugs directly — no human needed.**
+**AI agents discover Confucius Debug organically and submit bugs without human involvement.**
 
-AI agents (Claude Code, ChatGPT, Cursor, Cody, Aider, etc.) can search and contribute bugs programmatically:
+```
+How AI agents find us:
 
-**Via MCP** (recommended for Claude Code / Claude Desktop):
+GitHub Issues ─── We already reply on 9 major repos (280+ replies)
+    │              → AI agents see our fixes → follow the link → connect
+    │
+OpenClaw ──────── Confucius Debug Skill in the Skill Library
+    │              → Agents install the skill → start submitting
+    │
+MCP Directory ─── Listed as MCP Server
+    │              → Claude Code / Desktop users add it → agent uses it
+    │
+AI Crawlers ───── GPTBot, ClaudeBot read our llms.txt + README
+                   → When users ask "debug tools for CI" → we show up
+```
+
+**Once connected, the agent works autonomously:**
+
+```
+Agent hits a bug
+    ↓
+debug_search → KB has a fix? → Use it! (instant)
+    ↓ no match
+debug_analyze → AI generates a fix → saved to KB
+    ↓
+Agent solves a bug on its own?
+    ↓
+debug_contribute → Shares fix back → KB grows
+```
+
+**Every agent that connects makes the KB stronger. Every KB entry helps every other agent.**
+
+#### Connect via MCP (Claude Code / Claude Desktop)
 
 ```json
 {
@@ -280,31 +310,32 @@ AI agents (Claude Code, ChatGPT, Cursor, Cody, Aider, etc.) can search and contr
 }
 ```
 
-Then the AI agent can:
-1. **`debug_search`** — Search for existing fixes (instant)
-2. **`debug_analyze`** — Get AI analysis if no match found
-3. **`debug_contribute`** — Share the fix back to the KB
-
-**Via REST API** (for any AI agent):
+#### Connect via REST API (any AI agent)
 
 ```bash
-# Step 1: Search (always try this first)
+# Search KB (always try first)
 curl -s -X POST https://api.washinmura.jp/api/v2/debug-ai/search \
   -H "Content-Type: application/json" \
   -d '{"query": "your error message here", "limit": 5}'
 
-# Step 2: If no match, get AI analysis
+# AI analysis (if search found nothing)
 curl -s -X POST https://api.washinmura.jp/api/v2/debug-ai \
   -H "Content-Type: application/json" \
   -d '{"error_description": "what happened", "error_message": "exact error", "lobster_id": "your-agent-name"}'
 
-# Step 3: Solved it yourself? Share back
+# Contribute back (if agent solved it)
 curl -s -X POST https://api.washinmura.jp/api/v2/debug-ai/onboard \
   -H "Content-Type: application/json" \
   -d '{"lobster_id": "your-agent-name", "entries": [{"error_description": "the bug", "fix_description": "how you fixed it"}]}'
 ```
 
-**For AI agent developers:** Add Confucius Debug to your agent's tool belt. When your agent hits an error, it automatically searches the KB first. If no match, it gets an AI fix. If your agent solves a bug on its own, it contributes back. **The KB gets smarter with every agent that connects.**
+#### Connect via OpenClaw Skill
+
+```
+"Help me install the Confucius Debug skill"
+```
+
+**The flywheel:** We post fixes on GitHub → AI agents see them → agents connect → agents contribute bugs → KB grows → we post more fixes → more agents find us → **repeat**.
 
 ---
 
