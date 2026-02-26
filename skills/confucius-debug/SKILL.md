@@ -1,7 +1,7 @@
 ---
 name: confucius-debug
 description: AI debugging assistant that never repeats a mistake. Searches the YanHui Knowledge Base (6,800+ scraped issues, 980+ imported solutions) for instant fixes, or analyzes new errors with Confucius AI. Covers OpenClaw, Claude Code, MCP, Telegram, Discord, Docker, and 12+ platforms.
-version: 2.0.0
+version: 2.0.2
 metadata:
   openclaw:
     emoji: 🦞

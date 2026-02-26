@@ -1,6 +1,6 @@
 {
   "name": "confucius-debug-mcp",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Confucius Debug MCP Server — AI debugging that never repeats a mistake. 6,800+ issues, 980+ verified fixes.",
   "mcpName": "io.github.sstklen/confucius-debug",
   "license": "MIT",
