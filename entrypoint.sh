@@ -182,12 +182,12 @@ try:
             f.write(f'{k}={shlex.quote(v)}\n')
 except Exception:
     with open(os.environ['PARSE_FILE'], 'w') as f:
-        f.write(\"STATUS='unknown'\nSOURCE='unknown'\n\")
+        f.write("STATUS='unknown'\nSOURCE='unknown'\nCOST='0'\nENTRY_ID=''\nFIX_DESC=''\nFIX_PATCH=''\nROOT_CAUSE=''\nCATEGORY=''\nATTRIBUTION=''\n")
 " 2>/dev/null
   # 驗證暫存檔只包含合法的 shell 變數賦值
   if grep -qvE '^[A-Z_]+=' "$PARSE_FILE" 2>/dev/null; then
     echo "::warning::Unexpected content in parsed response, using defaults"
-    STATUS='unknown'; SOURCE='unknown'
+    STATUS='unknown'; SOURCE='unknown'; COST='0'; ENTRY_ID=''; FIX_DESC=''; FIX_PATCH=''; ROOT_CAUSE=''; CATEGORY=''; ATTRIBUTION=''
   else
     source "$PARSE_FILE"
   fi

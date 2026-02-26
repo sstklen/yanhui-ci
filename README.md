@@ -6,7 +6,7 @@
 <p align="center">
   <a href="https://github.com/sstklen/confucius-debug/actions"><img src="https://img.shields.io/badge/GitHub_Action-Marketplace-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" alt="GitHub Action"/></a>
   <a href="https://github.com/sstklen/confucius-debug/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="MIT License"/></a>
-  <a href="#mcp-server"><img src="https://img.shields.io/badge/MCP-Server-brightgreen?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJ3aGl0ZSI+PHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bTAgMThjLTQuNDIgMC04LTMuNTgtOC04czMuNTgtOCA4LTggOCAzLjU4IDggOC0zLjU4IDgtOCA4eiIvPjwvc3ZnPg==" alt="MCP Server"/></a>
+  <a href="#mcp-server-recommended"><img src="https://img.shields.io/badge/MCP-Server-brightgreen?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJ3aGl0ZSI+PHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bTAgMThjLTQuNDIgMC04LTMuNTgtOC04czMuNTgtOCA4LTggOCAzLjU4IDggOC0zLjU4IDgtOCA4eiIvPjwvc3ZnPg==" alt="MCP Server"/></a>
 </p>
 
 <p align="center">
@@ -17,13 +17,13 @@
 </p>
 
 <p align="center">
-  <a href="#mcp-server"><strong>MCP Server →</strong></a>
+  <a href="#mcp-server-recommended"><strong>MCP Server →</strong></a>
   &nbsp;·&nbsp;
   <a href="#github-action"><strong>GitHub Action →</strong></a>
   &nbsp;·&nbsp;
   <a href="#openclaw-skill"><strong>OpenClaw Skill →</strong></a>
   &nbsp;·&nbsp;
-  <a href="#api"><strong>REST API →</strong></a>
+  <a href="#rest-api"><strong>REST API →</strong></a>
   &nbsp;·&nbsp;
   <a href="https://github.com/sstklen/confucius-debug/issues/new/choose"><strong>Submit Bug →</strong></a>
 </p>
@@ -81,7 +81,7 @@ Most debug tools **wait for you to ask**. Confucius Debug **proactively hunts bu
 
 ## Install
 
-### MCP Server (Recommended) {#mcp-server}
+### MCP Server (Recommended)
 
 For **Claude Code**, **Claude Desktop**, or any MCP-compatible client:
 
@@ -103,7 +103,7 @@ Or add to your MCP config:
 
 Then tell your AI: *"Use debug_hello to set up"* — you get **10 free credits**.
 
-### GitHub Action {#github-action}
+### GitHub Action
 
 ```yaml
 - name: Confucius Debug AI
@@ -115,7 +115,7 @@ Then tell your AI: *"Use debug_hello to set up"* — you get **10 free credits**
 
 4 lines. When CI fails, Confucius posts the fix on your PR.
 
-### OpenClaw Skill {#openclaw-skill}
+### OpenClaw Skill
 
 ```
 "Help me install the Confucius Debug skill"
@@ -123,7 +123,7 @@ Then tell your AI: *"Use debug_hello to set up"* — you get **10 free credits**
 
 See [`skills/confucius-debug/SKILL.md`](skills/confucius-debug/SKILL.md) for full details.
 
-### REST API {#api}
+### REST API
 
 ```bash
 # Search (always free)
@@ -263,7 +263,7 @@ Then format my answers into this markdown template:
 
 </details>
 
-### Option 3: For AI Agents (they find us on their own) {#for-ai-agents}
+### Option 3: For AI Agents (they find us on their own)
 
 **AI agents discover Confucius Debug organically and submit bugs without human involvement.**
 
@@ -408,7 +408,7 @@ jobs:
 <summary><b>Security & Privacy</b></summary>
 
 ### What leaves your machine
-Only the error description and error message you provide. No source code, no file contents, no environment variables.
+Only the error description and error message you provide. The GitHub Action also sends CI metadata (repo name, branch, runner OS) for context. No source code, no file contents, no secret environment variables.
 
 ### What's stored
 Error descriptions and fixes in the YanHui KB. No PII beyond your chosen lobster-id.

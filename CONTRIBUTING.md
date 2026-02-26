@@ -86,7 +86,7 @@ Tell Claude: "Use debug_hello to onboard my bugs"
    act -j confucius-debug  # or test in a fork
 
    # For script changes
-   bash scripts/search.sh "test query"
+   bash skills/confucius-debug/scripts/search.sh "test query"
    ```
 5. **Submit the PR** with a clear description of what and why
 
@@ -106,8 +106,9 @@ Understanding the project structure helps you contribute effectively:
 confucius-debug (this repo — open source)
 ├── action.yml          # GitHub Action definition
 ├── entrypoint.sh       # GitHub Action entrypoint
-├── scripts/            # Shell scripts for search/analyze
-├── skills/             # OpenClaw Skill definition
+├── skills/             # OpenClaw Skill definition + shell scripts
+│   └── confucius-debug/scripts/  # search.sh, analyze.sh
+├── scripts/            # Utilities (social preview generator)
 ├── .github/            # Issue templates, CI workflows
 ├── llms.txt            # AI-readable project description
 └── README.md

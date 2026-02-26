@@ -19,6 +19,7 @@ metadata:
     requires:
       bins:
         - curl
+        - jq
       env:
         - CONFUCIUS_LOBSTER_ID
 ---
