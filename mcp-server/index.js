@@ -6,7 +6,7 @@
  * 薄殼 stdio 轉接器 — 所有請求轉發到遠端 HTTP MCP 端點。
  * 讓 Claude Desktop、Cursor 等 stdio-only 客戶端也能使用。
  *
- * 遠端端點: https://api.washinmura.jp/mcp/debug
+ * 遠端端點: https://drclaw.washinmura.jp/mcp/debug
  * 直接用 HTTP 的客戶端（如 Claude Code）不需要這個包，
  * 直接設定 URL 即可。
  */
@@ -14,7 +14,7 @@
 import { Readable, Writable } from "node:stream";
 import { Buffer } from "node:buffer";
 
-const REMOTE_URL = "https://api.washinmura.jp/mcp/debug";
+const REMOTE_URL = "https://drclaw.washinmura.jp/mcp/debug";
 
 // 讀 stdin，組合完整 JSON-RPC 訊息
 let buffer = "";

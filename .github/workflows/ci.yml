@@ -86,7 +86,7 @@ jobs:
         run: |
           # 搜尋端點（免費，不需要 ID）
           HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
-            -X POST https://api.washinmura.jp/api/v2/debug-ai/search \
+            -X POST https://drclaw.washinmura.jp/api/v2/debug-ai/search \
             -H "Content-Type: application/json" \
             -d '{"query": "test", "limit": 1}' \
             --max-time 15)

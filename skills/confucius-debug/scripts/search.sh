@@ -5,7 +5,7 @@
 #
 # Security Manifest:
 #   ENV accessed: CONFUCIUS_LOBSTER_ID (optional, for attribution)
-#   External endpoints: https://api.washinmura.jp/api/v2/debug-ai/search
+#   External endpoints: https://drclaw.washinmura.jp/api/v2/debug-ai/search
 #   Files: none (read-only API call)
 #   Side effects: none
 #
@@ -16,7 +16,7 @@
 set -euo pipefail
 
 QUERY="${1:?Usage: search.sh \"your error description\"}"
-API_URL="https://api.washinmura.jp/api/v2/debug-ai/search"
+API_URL="https://drclaw.washinmura.jp/api/v2/debug-ai/search"
 
 echo "🔍 Searching YanHui KB for: ${QUERY:0:80}..."
 echo ""
@@ -24,7 +24,7 @@ echo ""
 RESPONSE=$(curl -s --max-time 15 -w "%{http_code}" -o >(cat) -X POST "$API_URL" \
   -H "Content-Type: application/json" \
   -d "{\"query\": $(echo "$QUERY" | jq -Rs .), \"limit\": 5, \"channel\": \"clawhub\"}" 2>/dev/null) || {
-  echo "❌ Cannot reach Confucius API (api.washinmura.jp). Check your internet or try again later."
+  echo "❌ Cannot reach Confucius API (drclaw.washinmura.jp). Check your internet or try again later."
   exit 1
 }
 

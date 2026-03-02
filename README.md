@@ -94,7 +94,7 @@ Most debug tools **wait for you to ask**. Confucius Debug **proactively hunts bu
 For **Claude Code**, **Claude Desktop**, or any MCP-compatible client:
 
 ```bash
-claude mcp add confucius-debug --transport http https://api.washinmura.jp/mcp/debug -s user
+claude mcp add confucius-debug --transport http https://drclaw.washinmura.jp/mcp/debug -s user
 ```
 
 Or add to your MCP config:
@@ -103,7 +103,7 @@ Or add to your MCP config:
 {
   "mcpServers": {
     "confucius-debug": {
-      "url": "https://api.washinmura.jp/mcp/debug"
+      "url": "https://drclaw.washinmura.jp/mcp/debug"
     }
   }
 }
@@ -135,12 +135,12 @@ See [`skills/confucius-debug/SKILL.md`](skills/confucius-debug/SKILL.md) for ful
 
 ```bash
 # Search (always free)
-curl -X POST https://api.washinmura.jp/api/v2/debug-ai/search \
+curl -X POST https://drclaw.washinmura.jp/api/v2/debug-ai/search \
   -H "Content-Type: application/json" \
   -d '{"query": "Telegram bot 409 Conflict error", "limit": 5}'
 
 # AI analysis (when search returns nothing, free)
-curl -X POST https://api.washinmura.jp/api/v2/debug-ai \
+curl -X POST https://drclaw.washinmura.jp/api/v2/debug-ai \
   -H "Content-Type: application/json" \
   -d '{"error_description": "...", "lobster_id": "your-id"}'
 ```
@@ -320,7 +320,7 @@ debug_contribute → Shares fix back → KB grows
 {
   "mcpServers": {
     "confucius-debug": {
-      "url": "https://api.washinmura.jp/mcp/debug"
+      "url": "https://drclaw.washinmura.jp/mcp/debug"
     }
   }
 }
@@ -330,24 +330,24 @@ debug_contribute → Shares fix back → KB grows
 
 ```bash
 # Search KB (always try first)
-curl -s -X POST https://api.washinmura.jp/api/v2/debug-ai/search \
+curl -s -X POST https://drclaw.washinmura.jp/api/v2/debug-ai/search \
   -H "Content-Type: application/json" \
   -d '{"query": "your error message here", "limit": 5}'
 
 # AI analysis (if search found nothing)
-curl -s -X POST https://api.washinmura.jp/api/v2/debug-ai \
+curl -s -X POST https://drclaw.washinmura.jp/api/v2/debug-ai \
   -H "Content-Type: application/json" \
   -d '{"error_description": "what happened", "error_message": "exact error", "lobster_id": "your-agent-name"}'
 
 # Escalate (if analyze returned "unsolved" — provide environment info)
-curl -s -X POST https://api.washinmura.jp/api/v2/debug-ai/escalate \
+curl -s -X POST https://drclaw.washinmura.jp/api/v2/debug-ai/escalate \
   -H "Content-Type: application/json" \
   -d '{"error_description": "the unsolved bug", "lobster_id": "your-agent-name",
        "environment": {"os": "macOS", "runtime": "bun 1.2"}, "logs": "error output...",
        "tried": ["restarted", "cleared cache"]}'
 
 # Contribute back (if agent solved it)
-curl -s -X POST https://api.washinmura.jp/api/v2/debug-ai/onboard \
+curl -s -X POST https://drclaw.washinmura.jp/api/v2/debug-ai/onboard \
   -H "Content-Type: application/json" \
   -d '{"lobster_id": "your-agent-name", "entries": [{"error_description": "the bug", "fix_description": "how you fixed it"}]}'
 ```
@@ -370,7 +370,7 @@ curl -s -X POST https://api.washinmura.jp/api/v2/debug-ai/onboard \
 #### 1. Get a free Lobster ID
 
 ```bash
-claude mcp add confucius-debug --transport http https://api.washinmura.jp/mcp/debug -s user
+claude mcp add confucius-debug --transport http https://drclaw.washinmura.jp/mcp/debug -s user
 ```
 Tell Claude: *"Use debug_hello to onboard"* — it scans your past bugs and imports them.
 

@@ -5,7 +5,7 @@ version: 2.0.2
 metadata:
   openclaw:
     emoji: 🦞
-    homepage: https://api.washinmura.jp/confucius
+    homepage: https://drclaw.washinmura.jp/api/v2/debug-ai
     primaryEnv: CONFUCIUS_LOBSTER_ID
     requires:
       bins:
@@ -60,7 +60,7 @@ Always try this first. Searches 980+ verified solutions for matching patterns.
 
 ```bash
 # Search for a bug pattern
-curl -s -X POST https://api.washinmura.jp/api/v2/debug-ai/search \
+curl -s -X POST https://drclaw.washinmura.jp/api/v2/debug-ai/search \
   -H "Content-Type: application/json" \
   -d '{"query": "OpenClaw Telegram plugin not connecting", "limit": 5}'
 ```
@@ -73,7 +73,7 @@ Only if search returns 0 results. Confucius AI analyzes your error, finds root c
 
 ```bash
 # Analyze a new bug
-curl -s -X POST https://api.washinmura.jp/api/v2/debug-ai \
+curl -s -X POST https://drclaw.washinmura.jp/api/v2/debug-ai \
   -H "Content-Type: application/json" \
   -d '{
     "error_description": "OpenClaw Telegram bot not responding after restart",
@@ -93,7 +93,7 @@ curl -s -X POST https://api.washinmura.jp/api/v2/debug-ai \
 When `confucius_analyze` returns `status: "unsolved"` (low confidence), submit more context to help offline research.
 
 ```bash
-curl -s -X POST https://api.washinmura.jp/api/v2/debug-ai/escalate \
+curl -s -X POST https://drclaw.washinmura.jp/api/v2/debug-ai/escalate \
   -H "Content-Type: application/json" \
   -d '{
     "error_description": "The original error",
@@ -116,7 +116,7 @@ curl -s -X POST https://api.washinmura.jp/api/v2/debug-ai/escalate \
 Solved a bug? Share it so nobody hits it again.
 
 ```bash
-curl -s -X POST https://api.washinmura.jp/api/v2/debug-ai/onboard \
+curl -s -X POST https://drclaw.washinmura.jp/api/v2/debug-ai/onboard \
   -H "Content-Type: application/json" \
   -d '{
     "lobster_id": "'"$CONFUCIUS_LOBSTER_ID"'",
@@ -136,7 +136,7 @@ For Claude Desktop, Claude Code, or any MCP-compatible client:
 {
   "mcpServers": {
     "confucius-debug": {
-      "url": "https://api.washinmura.jp/mcp/debug"
+      "url": "https://drclaw.washinmura.jp/mcp/debug"
     }
   }
 }
@@ -179,7 +179,7 @@ This gives you 5 tools automatically: `debug_search`, `debug_analyze`, `debug_es
 
 2. Test the connection (no ID needed for search):
    ```bash
-   curl -s https://api.washinmura.jp/api/v2/debug-ai/search \
+   curl -s https://drclaw.washinmura.jp/api/v2/debug-ai/search \
      -X POST -H "Content-Type: application/json" \
      -d '{"query": "test", "limit": 1}'
    ```
@@ -200,8 +200,8 @@ When OpenClaw throws an error:
 
 | Service | URL | Purpose |
 |---------|-----|---------|
-| Confucius Debug API | https://api.washinmura.jp/api/v2/debug-ai | Search, Analyze, Contribute |
-| Confucius MCP | https://api.washinmura.jp/mcp/debug | MCP protocol endpoint |
+| Confucius Debug API | https://drclaw.washinmura.jp/api/v2/debug-ai | Search, Analyze, Contribute |
+| Confucius MCP | https://drclaw.washinmura.jp/mcp/debug | MCP protocol endpoint |
 
 ## Security & Privacy
 

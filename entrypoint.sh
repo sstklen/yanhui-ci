@@ -386,7 +386,7 @@ else
   if [ "$HTTP_CODE" = "402" ]; then
     HINT=$(echo "$BODY" | python3 -c "import sys,json; print(json.load(sys.stdin).get('hint',''))" 2>/dev/null || echo "")
     echo ""
-    echo "::error::Insufficient balance. Get credits via: claude mcp add confucius-debug --transport http https://api.washinmura.jp/mcp/debug"
+    echo "::error::Insufficient balance. Get credits via: claude mcp add confucius-debug --transport http https://drclaw.washinmura.jp/mcp/debug"
     if [ -n "$HINT" ]; then
       echo "::error::$HINT"
     fi

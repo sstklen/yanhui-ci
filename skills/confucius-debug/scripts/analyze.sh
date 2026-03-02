@@ -5,7 +5,7 @@
 #
 # Security Manifest:
 #   ENV accessed: CONFUCIUS_LOBSTER_ID (required, for identification)
-#   External endpoints: https://api.washinmura.jp/api/v2/debug-ai
+#   External endpoints: https://drclaw.washinmura.jp/api/v2/debug-ai
 #   Files: none (read-only API call)
 #   Side effects: solution saved to YanHui KB (free)
 #
@@ -17,7 +17,7 @@ set -euo pipefail
 DESC="${1:?Usage: analyze.sh \"error description\" \"error message (optional)\"}"
 MSG="${2:-}"
 LOBSTER_ID="${CONFUCIUS_LOBSTER_ID:?Set CONFUCIUS_LOBSTER_ID env var first}"
-API_URL="https://api.washinmura.jp/api/v2/debug-ai"
+API_URL="https://drclaw.washinmura.jp/api/v2/debug-ai"
 
 echo "🧙 Confucius is analyzing... (free, ~6 seconds)"
 echo ""
@@ -31,7 +31,7 @@ BODY=$(jq -n \
 RESPONSE=$(curl -s --max-time 30 -X POST "$API_URL" \
   -H "Content-Type: application/json" \
   -d "$BODY") || {
-  echo "❌ Cannot reach Confucius API (api.washinmura.jp). Check your internet or try again later."
+  echo "❌ Cannot reach Confucius API (drclaw.washinmura.jp). Check your internet or try again later."
   exit 1
 }
 

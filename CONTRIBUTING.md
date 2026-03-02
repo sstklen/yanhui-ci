@@ -19,7 +19,7 @@ Tell Claude: "Use debug_contribute to share my fix"
 
 **Via API:**
 ```bash
-curl -s -X POST https://api.washinmura.jp/api/v2/debug-ai/onboard \
+curl -s -X POST https://drclaw.washinmura.jp/api/v2/debug-ai/onboard \
   -H "Content-Type: application/json" \
   -d '{
     "lobster_id": "your-name",

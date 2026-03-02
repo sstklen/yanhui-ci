@@ -8,7 +8,7 @@ branding:
 
 inputs:
   lobster-id:
-    description: 'Your Lobster ID (get one free via MCP: claude mcp add confucius-debug --transport http https://api.washinmura.jp/mcp/debug)'
+    description: 'Your Lobster ID (get one free via MCP: claude mcp add confucius-debug --transport http https://drclaw.washinmura.jp/mcp/debug)'
     required: true
   error-log:
     description: 'Custom error text to analyze (if empty, auto-captures from /tmp/*.log files)'
@@ -25,7 +25,7 @@ inputs:
   api-url:
     description: 'Confucius Debug API endpoint (default: production)'
     required: false
-    default: 'https://api.washinmura.jp/api/v2/debug-ai'
+    default: 'https://drclaw.washinmura.jp/api/v2/debug-ai'
   language:
     description: 'Response language: en, zh, ja'
     required: false

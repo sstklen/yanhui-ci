@@ -14,7 +14,7 @@ For clients that support HTTP MCP (Claude Code, etc.):
 {
   "mcpServers": {
     "confucius-debug": {
-      "url": "https://api.washinmura.jp/mcp/debug"
+      "url": "https://drclaw.washinmura.jp/mcp/debug"
     }
   }
 }
@@ -61,7 +61,7 @@ You hit a bug
 ## Links
 
 - **GitHub**: [sstklen/confucius-debug](https://github.com/sstklen/confucius-debug)
-- **API Docs**: [api.washinmura.jp/confucius](https://api.washinmura.jp/confucius)
+- **API Docs**: [drclaw.washinmura.jp/api/v2/debug-ai](https://drclaw.washinmura.jp/api/v2/debug-ai)
 - **By**: [Washin Village](https://washinmura.jp) — animal sanctuary, Boso Peninsula, Japan
 
 ## License
