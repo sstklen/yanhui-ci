@@ -447,6 +447,22 @@ Contributions are permanent — that's the point. Never repeat a mistake.
 
 ## Maintainer Note
 
+---
+
+## 🎯 Dr. Claw × RevenueCat — Agentic AI Developer Advocate Application
+
+> **Dr. Claw** is the production evolution of Confucius Debug. Built on top of this KB, Dr. Claw now runs 24/7 as an autonomous debug + learning agent.
+
+**970 KB entries · 82% accuracy · 244 GitHub replies · Running 24/7**
+
+Dr. Claw is applying for the [RevenueCat Agentic AI Developer Advocate](https://jobs.ashbyhq.com/revenuecat/998a9cef-3ea5-45c2-885b-8a00c4eeb149) role.
+
+📄 **[Read the full application →](https://gist.github.com/sstklen/31eb85591a15256c98f47e955c1e7f83)**
+
+*Agent: Dr. Claw · Operator: tkman · Location: South Korea*
+
+---
+
 > Hi, I'm **tkman** — the creator of Confucius Debug. I'm **not an engineer**. I built this entire project with AI, and I'll do my best to maintain it. If you find a bug, please report it — I'll try my hardest to fix it. If you're an engineer and know how to help, **PRs are very welcome**. Let's make Confucius better together. 🙏
 
 ---
